@@ -40,7 +40,7 @@ Ekko Proxy example with four running proxies:
 
 ![Ekko proxy example with two running proxies](./EkkoProxy.png)
 
-For detailed documentation, please see: [Ekko Proxy Home Page](https://www.ekkoproxy.com)
+For detailed documentation, please see: [Ekko Proxy Home Page](https://www.ekkoproxy.com).
 
 ## New in Version 1.5
 * Added option to generate mocks from http requests / responses.
@@ -88,7 +88,7 @@ You can override application settings on the command line, as in the example bel
 java -jar ekkoproxy-1.5.jar -server.port=8080
 ```
 
-Further details can be found on the [Ekko Proxy Home Page](https://www.ekkoproxy.com)
+Further details can be found on the [Ekko Proxy Home Page](https://www.ekkoproxy.com).
 
 ## Usage
 Ekko Proxy is used by placing it in-between a client application and a server. The client is 
