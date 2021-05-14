@@ -1,4 +1,4 @@
-# EKKO PROXY 1.4
+# EKKO PROXY 1.5
 
 Ekko Proxy aka Echo Proxy is a Web Service Proxy service virtualization tool to monitor, record, playback and mock 
 web services and JDBC database calls.
@@ -16,6 +16,7 @@ Every software developer should really have an Ekko Proxy tool in their toolbox 
 * Integrate your application with dependent APIs or DBs before they are fully built.
 * Run various tools to compare, encode/decode, format, match, and hash data, validate / encode JWT tokens
   \- all safely from your local machine or server without the inherent dangers of using similar online tools.
+* Save time by generating mocks automatically from HTTP requests, OpenAPI, Swagger or WSDL specifications.
 
 Many service virtualization tools have a steep learning curve and can be cumbersome to setup. 
 Ekko Proxy is not one of them - instead, using it's intuitive and simple UI, you can get setup and running in minutes.
@@ -33,14 +34,27 @@ There are many great features in Ekko Proxy - some of which are listed below:
 * Easily view the contents of JWT tokens along with validating their signature or encode new ones.
 * View, manage, resend existing recorded requests from the recordings drawer.
 * Import / export proxy settings, recordings or mocks.
+* Generate mocks straight from HTTP requests or from OpenAPI, Swagger or WSDL definitions.
 
-Ekko Proxy example with two running proxies:
+Ekko Proxy example with four running proxies:
 
 ![Ekko proxy example with two running proxies](./EkkoProxy.png)
 
 For detailed documentation, please see: [Ekko Proxy Home Page](https://www.ekkoproxy.com)
 
-## New in Version 1.4
+## New in Version 1.5
+* Added option to generate mocks from http requests / responses.
+* A new tool to generate mocks directly from OpenAPI / Swagger has been added.
+* A new tool to generate mocks directly from WSDL files has been added.
+* Spring boot actuator has been configured and HTTP metrics for proxies are now recorded.
+* Added suggestions for headers when configuring mocks.
+* Content encoding now supports deflate and br (Brotli) on some operative systems.
+* Delays are now supported for JDBC mocks.
+* Various minor fixes and UI updates.
+* Added log file viewer in About page.
+* Added charting of requests / responses.
+
+## Version 1.4 changes
 * Added a new database proxy type for JDBC connections. This allows you to view JDBC calls and record or mock their responses.
 * Added inline search in text areas with highlighting.
 * See the proxy settings for a proxy in a new information tooltip.
@@ -51,22 +65,6 @@ For detailed documentation, please see: [Ekko Proxy Home Page](https://www.ekkop
 * Added option to import / export Ekko Proxy settings, recordings and mocks via the UI.
 * New tools SQL formatting option.
 * When creating a Ekko proxy the ports for which existing settings already exist are displayed as a suggestion.
-
-## Version 1.3.1 changes
-Minor release with only UX improvements - including:
-* Added syntax highlighting for XML, JSON and JWT.
-* Left-hand drawer is now collapsible.
-* Added speed dial menu to proxy request and response panes with word wrap and formatting options.
-
-## Version 1.3 changes
-* Various minor bug fixes and improvements.
-* Added tooling for comparing, encoding, formatting, hashing, JWT and matching data.
-* Redesigned the proxy message details section to provide a more detailed view.
-* Added new Recordings drawer to the proxy view for management of recordings.
-* Listener port can now accept SSL connections.
-* Added support for JsonPath expressions.
-* Added Auto output format for displaying messages formatted based on the content-type header.
-* HTTP messages are now saved raw with an option to save them formatted.
 
 
 ## Install
@@ -80,14 +78,14 @@ To install Ekko Proxy simply clone or download the ekkoproxy jar to your machine
 Ekko Proxy can be started using the command:
 
 ```bash
-java -jar ekkoproxy-1.4.jar
+java -jar ekkoproxy-1.5.jar
 ```
 This starts up the Ekko Proxy server and by default the Ekko Proxy UI can be accessed on http://localhost:4040 or http://&lt;server&gt;:4040 if installed on a server.
 
 You can override application settings on the command line, as in the example below, that specifies which port Ekko Proxy should be accessible on:
 
 ```bash
-java -jar ekkoproxy-1.4.jar -server.port=8080
+java -jar ekkoproxy-1.5.jar -server.port=8080
 ```
 
 Further details can be found on the [Ekko Proxy Home Page](https://www.ekkoproxy.com)
