@@ -1,4 +1,4 @@
-# EKKO PROXY 1.5
+# EKKO PROXY 1.5.1
 
 Ekko Proxy aka Echo Proxy is a Web Service Proxy service virtualization tool to monitor, record, playback and mock 
 web services and JDBC database calls.
@@ -40,9 +40,14 @@ Ekko Proxy example with four running proxies:
 
 ![Ekko proxy example with two running proxies](./EkkoProxy.png)
 
-For detailed documentation, please see: [Ekko Proxy Home Page](https://www.ekkoproxy.com).
+For detailed documentation, please see: [Ekko Proxy Home Page](https://www.ekkoproxy.com)
 
-## New in Version 1.5
+## New in Version 1.5.1
+* When creating a proxy you can now easily set if you want CORS handled automatically.
+* Fixed TLS supported version issue resulting in 500 - No Appropriate Protocol errors when connecting to target servers that do not support TLSv1.
+* Fixed network proxy lib linkage error occurring on some Windows Server versions.
+* Fixed potential NPE if network proxy authentication is required but none has been configured.
+## Version 1.5 changes
 * Added option to generate mocks from http requests / responses.
 * A new tool to generate mocks directly from OpenAPI / Swagger has been added.
 * A new tool to generate mocks directly from WSDL files has been added.
@@ -78,17 +83,17 @@ To install Ekko Proxy simply clone or download the ekkoproxy jar to your machine
 Ekko Proxy can be started using the command:
 
 ```bash
-java -jar ekkoproxy-1.5.jar
+java -jar ekkoproxy-1.5.1.jar
 ```
 This starts up the Ekko Proxy server and by default the Ekko Proxy UI can be accessed on http://localhost:4040 or http://&lt;server&gt;:4040 if installed on a server.
 
 You can override application settings on the command line, as in the example below, that specifies which port Ekko Proxy should be accessible on:
 
 ```bash
-java -jar ekkoproxy-1.5.jar -server.port=8080
+java -jar ekkoproxy-1.5.1.jar -server.port=8080
 ```
 
-Further details can be found on the [Ekko Proxy Home Page](https://www.ekkoproxy.com).
+Further details can be found on the [Ekko Proxy Home Page](https://www.ekkoproxy.com)
 
 ## Usage
 Ekko Proxy is used by placing it in-between a client application and a server. The client is 
