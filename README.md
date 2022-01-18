@@ -1,4 +1,4 @@
-# EKKO PROXY 1.5.1
+# EKKO PROXY 1.6
 
 Ekko Proxy aka Echo Proxy is a Web Service Proxy service virtualization tool to monitor, record, playback and mock 
 web services and JDBC database calls.
@@ -9,7 +9,7 @@ Every software developer should really have an Ekko Proxy tool in their toolbox 
 
 * Validate APIs / JDBC calls early in the project by recording requests and playing back recorded or mocked responses.
 * Run your application on the go without requiring network access to backend systems / databases.
-* Simulate a variety of responses to test hard to replicate scenarios or error conditions.
+* Simulate a variety of responses to test hard to replicate scenarios or error conditions / network delays & faults.
 * Minimize dependencies between service delivery teams allowing for a truly agile delivery model.
 * Load test applications or APIs without incurring potential costs associated with rate limits.
 * Increase development and testing time by reducing dependency on backend systems availability.
@@ -27,7 +27,8 @@ There are many great features in Ekko Proxy - some of which are listed below:
 * Create mock responses for API and DB calls with the [Ekko Proxy WireMock Editor](https://github.com/lcasoft/WireMock).
 * Record and playback requests and responses as they pass through Ekko Proxy.
 * View and compare requests or responses as they flow through Ekko Proxy instances.
-* Set delay ranges to simulate real response times for responses being played back.
+* Set or program delay ranges to simulate real response times for responses being played back.
+* Set or program various types of faults to simulate network / connection issues.
 * Configure expressions to organise recorded requests and responses in subfolders so you can easily find them.
 * Configure expressions to normalize requests for better matching with recorded responses.
 * Drag & drop recorded HTTP requests to a proxy to fire them at the target server.
@@ -36,11 +37,22 @@ There are many great features in Ekko Proxy - some of which are listed below:
 * Import / export proxy settings, recordings or mocks.
 * Generate mocks straight from HTTP requests or from OpenAPI, Swagger or WSDL definitions.
 
-Ekko Proxy example with four running proxies:
+Ekko Proxy example with three running proxies:
 
-![Ekko proxy example with two running proxies](./EkkoProxy.png)
+![Ekko proxy example with running proxies](./EkkoProxy.png)
 
 For detailed documentation, please see: [Ekko Proxy Home Page](https://www.ekkoproxy.com)
+
+## New in Version 1.6
+* Added per mock delay functionality allowing for various types of delays to be set.
+* Added per mock fault functionality allowing for various types of faults to be set.
+* Created delay and fault Handlebars template helpers allowing for programmatic control of delays and faults.
+* Added additional Handlebars template helpers: truncateDate, pickRandom, randomInt, randomDecimal, range,
+              array, parseJson, matches, contains, and math.
+* Added editor language support for HTML, CSS and JavaScript.
+* Added auto-complete to scenario fields enabling faster form filling.
+
+The new delay, fault and Handlebars templating helpers are all documented [here](https://www.ekkoproxy.com/wiremock.html).
 
 ## New in Version 1.5.1
 * When creating a proxy you can now easily set if you want CORS handled automatically.
@@ -83,14 +95,14 @@ To install Ekko Proxy simply clone or download the ekkoproxy jar to your machine
 Ekko Proxy can be started using the command:
 
 ```bash
-java -jar ekkoproxy-1.5.1.jar
+java -jar ekkoproxy-1.6.jar
 ```
 This starts up the Ekko Proxy server and by default the Ekko Proxy UI can be accessed on http://localhost:4040 or http://&lt;server&gt;:4040 if installed on a server.
 
 You can override application settings on the command line, as in the example below, that specifies which port Ekko Proxy should be accessible on:
 
 ```bash
-java -jar ekkoproxy-1.5.1.jar -server.port=8080
+java -jar ekkoproxy-1.6.jar -server.port=8080
 ```
 
 Further details can be found on the [Ekko Proxy Home Page](https://www.ekkoproxy.com)
